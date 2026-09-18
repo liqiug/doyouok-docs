@@ -1,11 +1,11 @@
-# Doyouok — Lightweight Cron Job & Workflow Monitoring
+# Doyouok — Cron Job & Workflow Monitoring
 
 [![Website](https://img.shields.io/badge/Website-doyouok.com-blue?style=flat-square)](https://doyouok.com)
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 
-**Doyouok** is a lightweight, zero-install monitoring service for **cron jobs, background tasks, database backups, and automation workflows**.
+**Doyouok** is a lightweight, zero-install monitoring service for **cron jobs, scripts, database backups, background tasks, and automation workflows**.
 
-It helps you detect jobs that **silently fail, stop running, or never complete**, and alerts you when a scheduled job misses its expected check-in.
+It detects when scheduled jobs silently fail, stop running, or miss their expected check-in — and alerts you when something goes wrong.
 
 > **If your job doesn't say "I'm OK", Doyouok lets you know.**
 
@@ -13,7 +13,7 @@ It helps you detect jobs that **silently fail, stop running, or never complete**
 
 ## 🚀 How It Works
 
-Doyouok uses a simple **HTTP heartbeat / ping** mechanism.
+Doyouok uses a simple HTTP heartbeat mechanism.
 
 ```text
 Your Job / Script
@@ -27,16 +27,16 @@ Your Job / Script
          │
          │ No check-in
          ▼
-   🔔 Alert You
+      🔔 Alert
 ```
 
 ### 1. Create a Check
 
-Create a monitor on [**Doyouok**](https://doyouok.com) and get a unique HTTP Ping URL.
+Create a monitor at [**doyouok.com**](https://doyouok.com) and get a unique Ping URL.
 
 ### 2. Ping When Your Job Succeeds
 
-Add a simple HTTP request to the end of your script or workflow.
+Send an HTTP request when your job or workflow completes successfully.
 
 ### 3. Get Alerted When It Stops
 
@@ -83,34 +83,138 @@ print("Doyouok check-in successful.")
 
 Doyouok works with automation platforms that can make HTTP requests.
 
-Simply add an **HTTP Request** step at the end of your workflow and call your Doyouok Ping URL:
+Add an HTTP Request step at the end of your workflow and call your Doyouok Ping URL:
 
 ```text
 https://ping.doyouok.com/ping/YOUR-API-KEY
 ```
 
-This makes it easy to monitor workflows that otherwise have no built-in failure notification.
+This lets you monitor workflows that may otherwise fail silently.
 
 ---
 
 ## 💡 What Can You Monitor?
 
-Doyouok is useful for monitoring:
+Doyouok can monitor almost anything that runs on a schedule:
 
-* ⏰ Cron jobs
-* 💾 Database backups
-* 📦 Data import/export jobs
-* 🔄 Background workers
-* 🐍 Python scripts
-* 🐚 Shell scripts
-* ⚙️ Scheduled automation
-* 🔗 n8n workflows
-* 🤖 Zapier / Make automations
-* 🖥️ Server maintenance tasks
-* 📊 ETL and data pipelines
+- ⏰ Cron jobs
+- 💾 Database backups
+- 📦 Data import/export jobs
+- 🔄 Background workers
+- 🐍 Python scripts
+- 🐚 Shell scripts
+- ⚙️ Scheduled automation
+- 🔗 n8n workflows
+- 🤖 Zapier / Make automations
+- 🖥️ Server maintenance tasks
+- 📊 ETL and data pipelines
+- 🔧 Scheduled maintenance scripts
 
-If something runs on a schedule and you need to know when it stops running, **Doyouok can monitor it**.
+If something runs on a schedule and you need to know when it stops running, Doyouok can monitor it.
 
 ---
 
-## ✨ Why Doyouok
+## ✨ Why Doyouok?
+
+### Zero Installation
+
+No agent, daemon, package, or monitoring software is required.
+
+### Simple HTTP Ping
+
+If your job can make an HTTP request, it can use Doyouok.
+
+### Detect Silent Failures
+
+A cron job can stop running, hang, or fail without anyone noticing.
+
+Doyouok watches for the expected heartbeat and alerts you when it is missing.
+
+### Works Anywhere
+
+Your job can run on:
+
+- Linux
+- Windows
+- Docker
+- VPS
+- Cloud servers
+- NAS
+- Raspberry Pi
+- CI/CD environments
+
+No special infrastructure is required.
+
+---
+
+## 💰 Pricing
+
+| Plan | Price | Checks | History |
+|---|---:|---:|---:|
+| **Free** | **$0 / month** | 5 | 7 days |
+| **Starter** | **$3 / month** | 35 | 30 days |
+| **Pro** | **$10 / month** | 120 | 90 days |
+| **Agency** | **$50 / month** | 600 | 180 days |
+
+All plans include the core HTTP monitoring functionality.
+
+For the latest pricing and features:
+
+👉 **[View Doyouok Pricing](https://doyouok.com)**
+
+---
+
+## 🔐 No Agent. No Infrastructure Changes.
+
+Doyouok doesn't require anything to be installed on the server running your jobs.
+
+Your existing workflow stays the same:
+
+```text
+Existing Job
+     │
+     ├── Do the work
+     │
+     └── HTTP Ping → Doyouok
+                         │
+                         ├── ✓ Check-in received
+                         │
+                         └── ✕ Check-in missing
+                                  │
+                                  ▼
+                                Alert
+```
+
+---
+
+## 📚 Documentation
+
+For setup instructions and integration examples, visit the:
+
+👉 **[Doyouok Documentation](https://doyouok.com/Home/Docs)**
+
+---
+
+## 🌐 Doyouok
+
+**Website:** [https://doyouok.com](https://doyouok.com)
+
+**Documentation:** [https://doyouok.com/Home/Docs](https://doyouok.com/Home/Docs)
+
+Create your first monitor for free:
+
+👉 **[Get started with Doyouok](https://doyouok.com)**
+
+---
+
+## 📄 About This Repository
+
+This public repository contains documentation and client integration examples for **Doyouok**.
+
+The Doyouok monitoring service itself is not open source.
+
+---
+
+## 📄 License
+
+The examples and documentation in this repository are released under the **MIT License**.
