@@ -149,13 +149,10 @@ No special infrastructure is required.
 
 ## 💰 Pricing
 
-| Plan | Price | Checks | History |
-|---|---:|---:|---:|
-| **Free** | **$0 / month** | 5 | 7 days |
-| **Starter** | **$3 / month** | 35 | 30 days |
-| **Pro** | **$10 / month** | 120 | 90 days |
-| **Agency** | **$50 / month** | 600 | 180 days |
-
+| Plan | Price | Checks |
+|---|---:|---:|
+| **Free** | **$0 / month** | 5 |
+| **Starter** | **$3 / month** | 35 |
 All plans include the core HTTP monitoring functionality.
 
 For the latest pricing and features:
